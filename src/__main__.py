@@ -20,9 +20,8 @@ def receive_data(data):
     json_string = data.data
     print(json_string)
     intent = parse_json(json_string)
-    print(f"{intent.name} {intent.confidence}")
+    print("{name} {confidence}".format(name=intent.name, confidence=intent.confidence))
     action_request = process_intent(intent)
-    print(f"{action_request.clear_action_queue} {action_request.actions[0].type}")
     publish_action(action_request)
 
 publisher = rospy.Publisher("/action", String, queue_size=10)
