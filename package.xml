@@ -1,0 +1,15 @@
+<package format="2">
+    <name>uxd_emotion</name>
+    <version>0.0.</version>
+    <description>
+        Maps intents to actions
+    </description>
+    <author>ENAMOUR UXD</author>
+    <maintainer email="enamour@thi.de">Enamour</maintainer> <!-- Required. Put some dummy value here. -->
+    <license>BSD</license>
+
+    <buildtool_depend>catkin</buildtool_depend>
+
+    <depend>rospy</depend>
+
+</package>

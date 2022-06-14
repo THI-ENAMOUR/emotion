@@ -1,0 +1,3 @@
+<launch>
+    <node name="uxd_emotion" pkg="main" type="__main__.py" output="screen"/>
+</launch>
