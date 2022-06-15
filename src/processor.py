@@ -59,14 +59,24 @@ class NavigationAction(Action):
         self.yaw = yaw
         super(NavigationAction, self).__init__(type=NavigationAction.type, start_ms=start_ms)
 
+class HeadAction(Action):
+    type = "head"
+
+    def __init__(self, start_ms, end_ms, roll, pitch, yaw):
+        self.end_ms = end_ms
+        self.roll =roll
+        self.pitch = pitch
+        self.yaw = yaw
+        super(HeadAction, self).__init__(type=HeadAction.type, start_ms=start_ms)
 
 class PoseAction(Action):
     type = "pose"
 
-    def __init__(self, start_ms, end_ms, roll, pitch, yaw):
+    def __init__(self, start_ms, end_ms, roll, pitch, yaw, height):
         self.roll = roll
         self.pitch = pitch
         self.yaw = yaw
+        self.height = height
         super(PoseAction, self).__init__(type=PoseAction.type, start_ms=start_ms, end_ms=end_ms)
 
 
@@ -78,24 +88,21 @@ class SitAction(Action):
 
 
 lookup = {
-    "lie down": {
+    "makeDogNeutral": {
         "actions": {
-            "joy": {
-                "action": [SoundAction(start_ms=0, data=DisplaySoundData(name="barking.mp3")), DisplayAction(start_ms=0, data=DisplaySoundData(name="lie down"))]
-            },
             "default": {
-                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="lie down")), SoundAction(start_ms=0, data=DisplaySoundData(name="lie down"))]
-            }
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="neutral")), HeadAction(start_ms=200, end_ms=1200, roll=0, pitch=10, yaw=0), ActionGroup(start_ms=2500, actions=[HeadAction(start_ms=0, end_ms=2000, roll=0, pitch=0, yaw=0), PoseAction(start_ms=0, end_ms=2000, roll=0, pitch=10, yaw=0, height=200)]), ActionGroup(start_ms=4500, actions=[HeadAction(start_ms=0, end_ms=2000, roll=0, pitch=10, yaw=0), PoseAction(start_ms=0, end_ms=2000, roll=0, pitch=0, yaw=0, height=250)])]
+            },
         },
         "resulting_emotion": None
     },
-    "make dog happy": {
+    "makeDogSad": {
         "actions": {
             "default": {
                 "action": []
             }
         },
-        "resulting_emotion": "joy"
+        "resulting_emotion": "sad"
     }
 }
 
