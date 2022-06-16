@@ -40,9 +40,17 @@ if __name__ == "__main__":
     rospy.init_node("uxd_core")
     rospy.Subscriber("/intent", String, receive_data)
     rospy.spin()
-
     
     
+    # receive_data(TestData("""
+    #                         {
+    #                             "intent":{
+    #                             "name":"makeDogSad",
+    #                             "confidence": 1
+    #                         }
+    #                     }
+    #                         """))
+                        
     # receive_data(TestData("""
     #                         {
     #                             "intent":{

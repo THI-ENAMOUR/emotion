@@ -53,16 +53,17 @@ class ActionGroup(Action):
 class NavigationAction(Action):
     type = "navigation"
 
-    def __init__(self, start_ms, x, y, yaw):
+    def __init__(self, start_ms, x=None, y=None, yaw=None,  body_height=None):
         self.x = x
         self.y = y
         self.yaw = yaw
+        self.body_height = body_height
         super(NavigationAction, self).__init__(type=NavigationAction.type, start_ms=start_ms)
 
 class HeadAction(Action):
     type = "head"
 
-    def __init__(self, start_ms, end_ms, roll, pitch, yaw):
+    def __init__(self, start_ms, end_ms=None, roll=None, pitch=None, yaw=None):
         self.end_ms = end_ms
         self.roll =roll
         self.pitch = pitch
@@ -72,11 +73,11 @@ class HeadAction(Action):
 class PoseAction(Action):
     type = "pose"
 
-    def __init__(self, start_ms, end_ms, roll, pitch, yaw, height):
+    def __init__(self, start_ms, end_ms, roll=None, pitch=None, yaw=None, body_height=None):
         self.roll = roll
         self.pitch = pitch
         self.yaw = yaw
-        self.height = height
+        self.body_height = body_height
         super(PoseAction, self).__init__(type=PoseAction.type, start_ms=start_ms, end_ms=end_ms)
 
 
@@ -90,16 +91,16 @@ class SitAction(Action):
 lookup = {
     "makeDogNeutral": {
         "actions": {
-            "default": {
-                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="neutral")), HeadAction(start_ms=200, end_ms=1200, roll=0, pitch=10, yaw=0), ActionGroup(start_ms=2500, actions=[HeadAction(start_ms=0, end_ms=2000, roll=0, pitch=0, yaw=0), PoseAction(start_ms=0, end_ms=2000, roll=0, pitch=10, yaw=0, height=200)]), ActionGroup(start_ms=4500, actions=[HeadAction(start_ms=0, end_ms=2000, roll=0, pitch=10, yaw=0), PoseAction(start_ms=0, end_ms=2000, roll=0, pitch=0, yaw=0, height=250)])]
+            "sad": {
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="neutral")), HeadAction(start_ms=200, end_ms=1200, roll=0, pitch=10, yaw=0), ActionGroup(start_ms=2500, actions=[HeadAction(start_ms=0, end_ms=2000, roll=0, pitch=0, yaw=0), PoseAction(start_ms=0, end_ms=2000, roll=0, pitch=10, yaw=0, body_height=200)]), ActionGroup(start_ms=4500, actions=[HeadAction(start_ms=0, end_ms=2000, roll=0, pitch=10, yaw=0), PoseAction(start_ms=0, end_ms=2000, roll=0, pitch=0, yaw=0, body_height=250)])]
             },
         },
-        "resulting_emotion": None
+        "resulting_emotion": "neutral"
     },
     "makeDogSad": {
         "actions": {
             "default": {
-                "action": []
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="sad"))]
             }
         },
         "resulting_emotion": "sad"
