@@ -89,22 +89,218 @@ class SitAction(Action):
 
 
 lookup = {
-    "makeDogNeutral": {
+    "endOfConversation": {
         "actions": {
             "sad": {
-                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="neutral")), HeadAction(start_ms=200, end_ms=1200, roll=0, pitch=10, yaw=0), ActionGroup(start_ms=2500, actions=[HeadAction(start_ms=0, end_ms=2000, roll=0, pitch=0, yaw=0), PoseAction(start_ms=0, end_ms=2000, roll=0, pitch=10, yaw=0, body_height=200)]), ActionGroup(start_ms=4500, actions=[HeadAction(start_ms=0, end_ms=2000, roll=0, pitch=10, yaw=0), PoseAction(start_ms=0, end_ms=2000, roll=0, pitch=0, yaw=0, body_height=250)])]
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="neutral"))]
+            },
+            "joy": {
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="neutral"))]
+            },
+            "affection": {
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="neutral"))]
+            },
+            "angry": {
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="neutral"))]
+            },
+            "fear": {
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="neutral"))]
+            },
+            "curious": {
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="neutral"))]
+            },
+            "sleepy": {
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="neutral"))]
+            },
+            "default": {
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="neutral"))]
             },
         },
         "resulting_emotion": "neutral"
     },
+
     "makeDogSad": {
         "actions": {
+            "neutral": {
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="sad")), SoundAction(start_ms=0, data=DisplaySoundData(name="Sad_01"))]
+            },
+            "joy": {
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="sad")), SoundAction(start_ms=0, data=DisplaySoundData(name="Sad_01"))]
+            },
+            "affection": {
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="sad")), SoundAction(start_ms=0, data=DisplaySoundData(name="Sad_01"))]
+            },
+            "angry": {
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="sad")), SoundAction(start_ms=0, data=DisplaySoundData(name="Sad_01"))]
+            },
+            "fear": {
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="sad")), SoundAction(start_ms=0, data=DisplaySoundData(name="Sad_01"))]
+            },
+            "curious": {
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="sad")), SoundAction(start_ms=0, data=DisplaySoundData(name="Sad_01"))]
+            },
+            "sleepy": {
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="sad")), SoundAction(start_ms=0, data=DisplaySoundData(name="Sad_01"))]
+            },
             "default": {
-                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="sad"))]
-            }
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="sad")), SoundAction(start_ms=0, data=DisplaySoundData(name="Sad_01"))]
+            },
         },
         "resulting_emotion": "sad"
-    }
+    },
+
+    "makeDogJoy": {
+        "actions": {
+            "neutral": {
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="joy")), SoundAction(start_ms=0, data=DisplaySoundData(name="Joy_01"))]
+            },
+            "sad": {
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="joy")), SoundAction(start_ms=0, data=DisplaySoundData(name="Joy_01"))]
+            },
+            "affection": {
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="joy")), SoundAction(start_ms=0, data=DisplaySoundData(name="Joy_01"))]
+            },
+            "angry": {
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="joy")), SoundAction(start_ms=0, data=DisplaySoundData(name="Joy_01"))]
+            },
+            "fear": {
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="joy")), SoundAction(start_ms=0, data=DisplaySoundData(name="Joy_01"))]
+            },
+            "curious": {
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="joy")), SoundAction(start_ms=0, data=DisplaySoundData(name="Joy_01"))]
+            },
+            "sleepy": {
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="joy")), SoundAction(start_ms=0, data=DisplaySoundData(name="Joy_01"))]
+            },
+            "default": {
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="joy")), SoundAction(start_ms=0, data=DisplaySoundData(name="Joy_01"))]
+            },
+        },
+        "resulting_emotion": "joy"
+    },
+
+    
+    "makeDogSleepy": {
+        "actions": {
+            "neutral": {
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="sleepy")), SoundAction(start_ms=0, data=DisplaySoundData(name="Sleepy_01"))]
+            },
+            "sad": {
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="sleepy")), SoundAction(start_ms=0, data=DisplaySoundData(name="Sleepy_01"))]
+            },
+            "affection": {
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="sleepy")), SoundAction(start_ms=0, data=DisplaySoundData(name="Sleepy_01"))]
+            },
+            "angry": {
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="sleepy")), SoundAction(start_ms=0, data=DisplaySoundData(name="Sleepy_01"))]
+            },
+            "fear": {
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="sleepy")), SoundAction(start_ms=0, data=DisplaySoundData(name="Sleepy_01"))]
+            },
+            "curious": {
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="sleepy")), SoundAction(start_ms=0, data=DisplaySoundData(name="Sleepy_01"))]
+            },
+            "joy": {
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="sleepy")), SoundAction(start_ms=0, data=DisplaySoundData(name="Sleepy_01"))]
+            },
+            "default": {
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="sleepy")), SoundAction(start_ms=0, data=DisplaySoundData(name="Sleepy_01"))]
+            },
+        },
+        "resulting_emotion": "sleepy"
+    },
+    
+    "makeDogAffection": {
+        "actions": {
+            "neutral": {
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="affection")), SoundAction(start_ms=0, data=DisplaySoundData(name="Affection_01"))]
+            },
+            "sad": {
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="affection")), SoundAction(start_ms=0, data=DisplaySoundData(name="Affection_01"))]
+            },
+            "sleepy": {
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="affection")), SoundAction(start_ms=0, data=DisplaySoundData(name="Affection_01"))]
+            },
+            "angry": {
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="affection")), SoundAction(start_ms=0, data=DisplaySoundData(name="Affection_01"))]
+            },
+            "fear": {
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="affection")), SoundAction(start_ms=0, data=DisplaySoundData(name="Affection_01"))]
+            },
+            "curious": {
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="affection")), SoundAction(start_ms=0, data=DisplaySoundData(name="Affection_01"))]
+            },
+            "joy": {
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="affection")), SoundAction(start_ms=0, data=DisplaySoundData(name="Affection_01"))]
+            },
+            "default": {
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="affection")), SoundAction(start_ms=0, data=DisplaySoundData(name="Affection_01"))]
+            },
+        },
+        "resulting_emotion": "affection"
+    },
+
+    "makeDogAngry": {
+        "actions": {
+            "neutral": {
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="angry")), SoundAction(start_ms=0, data=DisplaySoundData(name="Anger_01"))]
+            },
+            "sad": {
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="angry")), SoundAction(start_ms=0, data=DisplaySoundData(name="Anger_01"))]
+            },
+            "affection": {
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="angry")), SoundAction(start_ms=0, data=DisplaySoundData(name="Anger_01"))]
+            },
+            "sleepy": {
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="angry")), SoundAction(start_ms=0, data=DisplaySoundData(name="Anger_01"))]
+            },
+            "fear": {
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="angry")), SoundAction(start_ms=0, data=DisplaySoundData(name="Anger_01"))]
+            },
+            "curious": {
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="angry")), SoundAction(start_ms=0, data=DisplaySoundData(name="Anger_01"))]
+            },
+            "joy": {
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="angry")), SoundAction(start_ms=0, data=DisplaySoundData(name="Anger_01"))]
+            },
+            "default": {
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="angry")), SoundAction(start_ms=0, data=DisplaySoundData(name="Anger_01"))]
+            },
+        },
+        "resulting_emotion": "angry"
+    },
+
+    "makeDogFear": {
+    "actions": {
+        "neutral": {
+            "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="fear")), SoundAction(start_ms=0, data=DisplaySoundData(name="Fear_01"))]
+        },
+        "sad": {
+            "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="fear")), SoundAction(start_ms=0, data=DisplaySoundData(name="Fear_01"))]
+        },
+        "affection": {
+            "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="fear")), SoundAction(start_ms=0, data=DisplaySoundData(name="Fear_01"))]
+        },
+        "sleepy": {
+            "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="fear")), SoundAction(start_ms=0, data=DisplaySoundData(name="Fear_01"))]
+        },
+        "angry": {
+            "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="fear")), SoundAction(start_ms=0, data=DisplaySoundData(name="Fear_01"))]
+        },
+        "curious": {
+            "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="fear")), SoundAction(start_ms=0, data=DisplaySoundData(name="Fear_01"))]
+        },
+        "joy": {
+            "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="fear")), SoundAction(start_ms=0, data=DisplaySoundData(name="Fear_01"))]
+        },
+        "default": {
+            "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="fear")), SoundAction(start_ms=0, data=DisplaySoundData(name="Fear_01"))]
+        },
+    },
+    "resulting_emotion": "fear"
+    },
+    
+
 }
 
 def process_intent(intent):
@@ -142,7 +338,7 @@ def to_serializable_dict(data):
     elif isinstance(data, uuid.UUID):
         return str(data)
     if hasattr(data, "__dict__"):
-        deserializable_dict = data.__dict__
+        deserializable_dict = dict(data.__dict__)
         for key, value in deserializable_dict.iteritems():
             if isinstance(value, list):
                 new_value = []

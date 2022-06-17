@@ -54,7 +54,7 @@ if __name__ == "__main__":
     # receive_data(TestData("""
     #                         {
     #                             "intent":{
-    #                             "name":"makeDogNeutral",
+    #                             "name":"makeDogJoy",
     #                             "confidence": 1
     #                         }
     #                     }
