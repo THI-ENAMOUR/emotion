@@ -1,4 +1,5 @@
 import json
+import random
 import uuid
 
 class State:
@@ -87,6 +88,12 @@ class SitAction(Action):
     def __init__(self, start_ms):
         super(SitAction, self).__init__(type=SitAction.type, start_ms=start_ms)
 
+sadSoundList = ["Sad_01","Sad_02","Sad_03"]
+joySoundList = ["Joy_01","Joy_02","Joy_03"]
+sleepySoundList = ["Sleepy_01","Sleepy_02","Sleepy_03"]
+affectionSoundList = ["Affection_01","Affection_02","Affection_03"]
+angrySoundList = ["Anger_01","Anger_02","Anger_03"]
+fearSoundList = ["Fear_01","Fear_02","Fear_03"]
 
 lookup = {
     "endOfConversation": {
@@ -122,28 +129,28 @@ lookup = {
     "makeDogSad": {
         "actions": {
             "neutral": {
-                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="sad")), SoundAction(start_ms=0, data=DisplaySoundData(name="Sad_01"))]
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="sad")), SoundAction(start_ms=0, data=DisplaySoundData(name= random.choice(sadSoundList)))]
             },
             "joy": {
-                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="sad")), SoundAction(start_ms=0, data=DisplaySoundData(name="Sad_01"))]
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="sad")), SoundAction(start_ms=0, data=DisplaySoundData(name= random.choice(sadSoundList)))]
             },
             "affection": {
-                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="sad")), SoundAction(start_ms=0, data=DisplaySoundData(name="Sad_01"))]
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="sad")), SoundAction(start_ms=0, data=DisplaySoundData(name= random.choice(sadSoundList)))]
             },
             "angry": {
-                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="sad")), SoundAction(start_ms=0, data=DisplaySoundData(name="Sad_01"))]
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="sad")), SoundAction(start_ms=0, data=DisplaySoundData(name= random.choice(sadSoundList)))]
             },
             "fear": {
-                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="sad")), SoundAction(start_ms=0, data=DisplaySoundData(name="Sad_01"))]
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="sad")), SoundAction(start_ms=0, data=DisplaySoundData(name= random.choice(sadSoundList)))]
             },
             "curious": {
-                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="sad")), SoundAction(start_ms=0, data=DisplaySoundData(name="Sad_01"))]
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="sad")), SoundAction(start_ms=0, data=DisplaySoundData(name= random.choice(sadSoundList)))]
             },
             "sleepy": {
-                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="sad")), SoundAction(start_ms=0, data=DisplaySoundData(name="Sad_01"))]
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="sad")), SoundAction(start_ms=0, data=DisplaySoundData(name= random.choice(sadSoundList)))]
             },
             "default": {
-                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="sad")), SoundAction(start_ms=0, data=DisplaySoundData(name="Sad_01"))]
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="sad")), SoundAction(start_ms=0, data=DisplaySoundData(name= random.choice(sadSoundList)))]
             },
         },
         "resulting_emotion": "sad"
@@ -152,28 +159,28 @@ lookup = {
     "makeDogJoy": {
         "actions": {
             "neutral": {
-                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="joy")), SoundAction(start_ms=0, data=DisplaySoundData(name="Joy_01"))]
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="joy")), SoundAction(start_ms=0, data=DisplaySoundData(name= random.choice(joySoundList)))]
             },
             "sad": {
-                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="joy")), SoundAction(start_ms=0, data=DisplaySoundData(name="Joy_01"))]
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="joy")), SoundAction(start_ms=0, data=DisplaySoundData(name= random.choice(joySoundList)))]
             },
             "affection": {
-                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="joy")), SoundAction(start_ms=0, data=DisplaySoundData(name="Joy_01"))]
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="joy")), SoundAction(start_ms=0, data=DisplaySoundData(name= random.choice(joySoundList)))]
             },
             "angry": {
-                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="joy")), SoundAction(start_ms=0, data=DisplaySoundData(name="Joy_01"))]
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="joy")), SoundAction(start_ms=0, data=DisplaySoundData(name= random.choice(joySoundList)))]
             },
             "fear": {
-                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="joy")), SoundAction(start_ms=0, data=DisplaySoundData(name="Joy_01"))]
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="joy")), SoundAction(start_ms=0, data=DisplaySoundData(name= random.choice(joySoundList)))]
             },
             "curious": {
-                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="joy")), SoundAction(start_ms=0, data=DisplaySoundData(name="Joy_01"))]
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="joy")), SoundAction(start_ms=0, data=DisplaySoundData(name= random.choice(joySoundList)))]
             },
             "sleepy": {
-                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="joy")), SoundAction(start_ms=0, data=DisplaySoundData(name="Joy_01"))]
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="joy")), SoundAction(start_ms=0, data=DisplaySoundData(name= random.choice(joySoundList)))]
             },
             "default": {
-                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="joy")), SoundAction(start_ms=0, data=DisplaySoundData(name="Joy_01"))]
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="joy")), SoundAction(start_ms=0, data=DisplaySoundData(name= random.choice(joySoundList)))]
             },
         },
         "resulting_emotion": "joy"
@@ -183,28 +190,28 @@ lookup = {
     "makeDogSleepy": {
         "actions": {
             "neutral": {
-                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="sleepy")), SoundAction(start_ms=0, data=DisplaySoundData(name="Sleepy_01"))]
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="sleepy")), SoundAction(start_ms=0, data=DisplaySoundData(name= random.choice(sleepySoundList)))]
             },
             "sad": {
-                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="sleepy")), SoundAction(start_ms=0, data=DisplaySoundData(name="Sleepy_01"))]
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="sleepy")), SoundAction(start_ms=0, data=DisplaySoundData(name= random.choice(sleepySoundList)))]
             },
             "affection": {
-                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="sleepy")), SoundAction(start_ms=0, data=DisplaySoundData(name="Sleepy_01"))]
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="sleepy")), SoundAction(start_ms=0, data=DisplaySoundData(name= random.choice(sleepySoundList)))]
             },
             "angry": {
-                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="sleepy")), SoundAction(start_ms=0, data=DisplaySoundData(name="Sleepy_01"))]
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="sleepy")), SoundAction(start_ms=0, data=DisplaySoundData(name= random.choice(sleepySoundList)))]
             },
             "fear": {
-                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="sleepy")), SoundAction(start_ms=0, data=DisplaySoundData(name="Sleepy_01"))]
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="sleepy")), SoundAction(start_ms=0, data=DisplaySoundData(name= random.choice(sleepySoundList)))]
             },
             "curious": {
-                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="sleepy")), SoundAction(start_ms=0, data=DisplaySoundData(name="Sleepy_01"))]
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="sleepy")), SoundAction(start_ms=0, data=DisplaySoundData(name= random.choice(sleepySoundList)))]
             },
             "joy": {
-                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="sleepy")), SoundAction(start_ms=0, data=DisplaySoundData(name="Sleepy_01"))]
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="sleepy")), SoundAction(start_ms=0, data=DisplaySoundData(name= random.choice(sleepySoundList)))]
             },
             "default": {
-                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="sleepy")), SoundAction(start_ms=0, data=DisplaySoundData(name="Sleepy_01"))]
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="sleepy")), SoundAction(start_ms=0, data=DisplaySoundData(name= random.choice(sleepySoundList)))]
             },
         },
         "resulting_emotion": "sleepy"
@@ -213,28 +220,28 @@ lookup = {
     "makeDogAffection": {
         "actions": {
             "neutral": {
-                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="affection")), SoundAction(start_ms=0, data=DisplaySoundData(name="Affection_01"))]
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="affection")), SoundAction(start_ms=0, data=DisplaySoundData(name= random.choice(affectionSoundList)))]
             },
             "sad": {
-                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="affection")), SoundAction(start_ms=0, data=DisplaySoundData(name="Affection_01"))]
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="affection")), SoundAction(start_ms=0, data=DisplaySoundData(name= random.choice(affectionSoundList)))]
             },
             "sleepy": {
-                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="affection")), SoundAction(start_ms=0, data=DisplaySoundData(name="Affection_01"))]
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="affection")), SoundAction(start_ms=0, data=DisplaySoundData(name= random.choice(affectionSoundList)))]
             },
             "angry": {
-                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="affection")), SoundAction(start_ms=0, data=DisplaySoundData(name="Affection_01"))]
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="affection")), SoundAction(start_ms=0, data=DisplaySoundData(name= random.choice(affectionSoundList)))]
             },
             "fear": {
-                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="affection")), SoundAction(start_ms=0, data=DisplaySoundData(name="Affection_01"))]
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="affection")), SoundAction(start_ms=0, data=DisplaySoundData(name= random.choice(affectionSoundList)))]
             },
             "curious": {
-                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="affection")), SoundAction(start_ms=0, data=DisplaySoundData(name="Affection_01"))]
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="affection")), SoundAction(start_ms=0, data=DisplaySoundData(name= random.choice(affectionSoundList)))]
             },
             "joy": {
-                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="affection")), SoundAction(start_ms=0, data=DisplaySoundData(name="Affection_01"))]
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="affection")), SoundAction(start_ms=0, data=DisplaySoundData(name= random.choice(affectionSoundList)))]
             },
             "default": {
-                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="affection")), SoundAction(start_ms=0, data=DisplaySoundData(name="Affection_01"))]
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="affection")), SoundAction(start_ms=0, data=DisplaySoundData(name= random.choice(affectionSoundList)))]
             },
         },
         "resulting_emotion": "affection"
@@ -243,28 +250,28 @@ lookup = {
     "makeDogAngry": {
         "actions": {
             "neutral": {
-                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="angry")), SoundAction(start_ms=0, data=DisplaySoundData(name="Anger_01"))]
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="angry")), SoundAction(start_ms=0, data=DisplaySoundData(name= random.choice(angrySoundList)))]
             },
             "sad": {
-                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="angry")), SoundAction(start_ms=0, data=DisplaySoundData(name="Anger_01"))]
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="angry")), SoundAction(start_ms=0, data=DisplaySoundData(name= random.choice(angrySoundList)))]
             },
             "affection": {
-                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="angry")), SoundAction(start_ms=0, data=DisplaySoundData(name="Anger_01"))]
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="angry")), SoundAction(start_ms=0, data=DisplaySoundData(name= random.choice(angrySoundList)))]
             },
             "sleepy": {
-                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="angry")), SoundAction(start_ms=0, data=DisplaySoundData(name="Anger_01"))]
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="angry")), SoundAction(start_ms=0, data=DisplaySoundData(name= random.choice(angrySoundList)))]
             },
             "fear": {
-                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="angry")), SoundAction(start_ms=0, data=DisplaySoundData(name="Anger_01"))]
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="angry")), SoundAction(start_ms=0, data=DisplaySoundData(name= random.choice(angrySoundList)))]
             },
             "curious": {
-                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="angry")), SoundAction(start_ms=0, data=DisplaySoundData(name="Anger_01"))]
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="angry")), SoundAction(start_ms=0, data=DisplaySoundData(name= random.choice(angrySoundList)))]
             },
             "joy": {
-                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="angry")), SoundAction(start_ms=0, data=DisplaySoundData(name="Anger_01"))]
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="angry")), SoundAction(start_ms=0, data=DisplaySoundData(name= random.choice(angrySoundList)))]
             },
             "default": {
-                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="angry")), SoundAction(start_ms=0, data=DisplaySoundData(name="Anger_01"))]
+                "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="angry")), SoundAction(start_ms=0, data=DisplaySoundData(name= random.choice(angrySoundList)))]
             },
         },
         "resulting_emotion": "angry"
@@ -273,28 +280,28 @@ lookup = {
     "makeDogFear": {
     "actions": {
         "neutral": {
-            "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="fear")), SoundAction(start_ms=0, data=DisplaySoundData(name="Fear_01"))]
+            "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="fear")), SoundAction(start_ms=0, data=DisplaySoundData(name= random.choice(fearSoundList)))]
         },
         "sad": {
-            "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="fear")), SoundAction(start_ms=0, data=DisplaySoundData(name="Fear_01"))]
+            "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="fear")), SoundAction(start_ms=0, data=DisplaySoundData(name= random.choice(fearSoundList)))]
         },
         "affection": {
-            "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="fear")), SoundAction(start_ms=0, data=DisplaySoundData(name="Fear_01"))]
+            "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="fear")), SoundAction(start_ms=0, data=DisplaySoundData(name= random.choice(fearSoundList)))]
         },
         "sleepy": {
-            "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="fear")), SoundAction(start_ms=0, data=DisplaySoundData(name="Fear_01"))]
+            "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="fear")), SoundAction(start_ms=0, data=DisplaySoundData(name= random.choice(fearSoundList)))]
         },
         "angry": {
-            "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="fear")), SoundAction(start_ms=0, data=DisplaySoundData(name="Fear_01"))]
+            "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="fear")), SoundAction(start_ms=0, data=DisplaySoundData(name= random.choice(fearSoundList)))]
         },
         "curious": {
-            "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="fear")), SoundAction(start_ms=0, data=DisplaySoundData(name="Fear_01"))]
+            "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="fear")), SoundAction(start_ms=0, data=DisplaySoundData(name= random.choice(fearSoundList)))]
         },
         "joy": {
-            "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="fear")), SoundAction(start_ms=0, data=DisplaySoundData(name="Fear_01"))]
+            "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="fear")), SoundAction(start_ms=0, data=DisplaySoundData(name= random.choice(fearSoundList)))]
         },
         "default": {
-            "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="fear")), SoundAction(start_ms=0, data=DisplaySoundData(name="Fear_01"))]
+            "action": [DisplayAction(start_ms=0, data=DisplaySoundData(name="fear")), SoundAction(start_ms=0, data=DisplaySoundData(name= random.choice(fearSoundList)))]
         },
     },
     "resulting_emotion": "fear"
