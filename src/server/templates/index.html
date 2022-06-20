@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Spike</title>
+    <link rel="stylesheet" href="{{
+        url_for('static', filename='css/style.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+
+<body>
+    <script src="./static/js/lottie.js"></script>
+    <div id="bodymovin"></div>
+
+    <!--include data of animation-->
+    <script src="./static/js/EmotionController.js"></script>
+    <script>
+        var params = {
+            container: document.getElementById('bodymovin'),
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            animationData: animationData
+        };
+
+        var anim;
+
+        anim = bodymovin.loadAnimation(params);
+
+    </script>
+
+    <script type=text/javascript src="{{
+        url_for('static', filename='js/script.js') }}">
+    </script>
+</body>
+
+</html>

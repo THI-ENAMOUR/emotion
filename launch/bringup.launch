@@ -1,0 +1,4 @@
+<launch>
+    <node name="frontend_server" pkg="enamour_frontend" type="app.py"/>
+    <node name="frontend_node" pkg="enamour_frontend" type="ros_to_http.py"/>
+</launch>
