@@ -29,8 +29,8 @@ display_source.onmessage = (msg) => {
                 switch (nextEmotion) {
                     case angry:
                         animationData = neutralToAngry;
-                        setTimeout(3000);
-                        lottie.freeze();
+                        // setTimeout(3000);
+                        // lottie.freeze();
                         break;
                     case sad:
                         animationData = {};
@@ -55,8 +55,8 @@ display_source.onmessage = (msg) => {
                         break;
                     case joy:
                         animationData = neutralToJoy;
-                        setTimeout(3000);
-                        lottie.freeze();
+                        // setTimeout(3000);
+                        // lottie.freeze();
                         break;
                     default: ("no emotion to display");
 
