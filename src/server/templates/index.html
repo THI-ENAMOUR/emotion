@@ -11,13 +11,13 @@
 
 <body>
     <script src="./static/js/lottie.js"></script>
-    <div id="bodymovin"></div>
+    <div id="imgDiv"></div>
 
     <!--include data of animation-->
     <script src="./static/js/EmotionController.js"></script>
     <script>
         var params = {
-            container: document.getElementById('bodymovin'),
+            container: document.getElementById('imgDiv'),
             renderer: 'svg',
             loop: true,
             autoplay: true,
@@ -26,7 +26,7 @@
 
         var anim;
 
-        anim = bodymovin.loadAnimation(params);
+        anim = imgDiv.loadAnimation(params);
 
     </script>
 

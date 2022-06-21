@@ -317,7 +317,7 @@ sound_source.onmessage = (msg) => {
                 sound.pause();
                 sound.currentTime = 0;
             }
-            let url = 'static/audio/' + fileName;
+            let url = 'static/audio/' + fileName +'.wav';
             sound = new Audio(url);
             sound.play();
         }
