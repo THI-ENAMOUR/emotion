@@ -10,8 +10,9 @@ display_source.onopen = (e) => console.log('Connection requested')
 sound_source.onopen = (e) => console.log('Connection requested')
 
 
-//let data = JSON.parse(msg.data)
-let data = { name: 'angry' };
+let data = JSON.parse(msg.data);
+//let data = { name: 'angry' };
+
 
 console.log("received display data: ")
 console.log(data["name"])
@@ -32,13 +33,13 @@ switch (currentEmotion) {
                 animationData = neutralToSad;
                 break;
             case 'affection':
-                animationData = {};
+                animationData = neutralToAffection;
                 break;
             case 'curious':
                 animationData = neutralToCurious;
                 break;
             case 'sleepy':
-                animationData = {};
+                animationData = neutralToSleepy;
                 break;
             case 'joy':
                 animationData = neutralToJoy;
@@ -57,19 +58,22 @@ switch (currentEmotion) {
                 animationData = fearToNeutral;
                 break;
             case 'anger':
-                animationData = {};
+                animationData = fearToAngry;
                 break;
             case 'affection':
-                animationData = {};
+                animationData = fearToAffection;
                 break;
             case 'curious':
-                animationData = {};
+                animationData = fearToCurious;
                 break;
             case 'sleepy':
-                animationData = {};
+                animationData = fearToSleepy;
                 break;
             case 'joy':
                 animationData = fearToJoy;
+                break;
+            case 'sad':
+                animationData = fearToSad;
                 break;
             default:
                 console.log("no new emotion to display");
@@ -81,19 +85,22 @@ switch (currentEmotion) {
                 animationData = angryToNeutral;
                 break;
             case 'fear':
-                animationData = {};
+                animationData = angryToFear;
                 break;
             case 'affection':
-                animationData = {};
+                animationData = angryToAffection;
                 break;
             case 'curious':
-                animationData = {};
+                animationData = angryToCurious;
                 break;
             case 'sleepy':
-                animationData = {};
+                animationData = angryToSleepy;
                 break;
             case 'joy':
                 animationData = angryToJoy;
+                break;
+            case 'sad':
+                animationData = angryToSad;
                 break;
             default:
                 console.log("no new emotion to display");
@@ -108,19 +115,19 @@ switch (currentEmotion) {
                 animationData = {};
                 break;
             case 'fear':
-                animationData = {};
-                break;
-            case 'anger':
-                animationData = {};
+                animationData = affectionToFear;
                 break;
             case 'curious':
-                animationData = {};
+                animationData = affectionToCurious;
                 break;
             case 'sleepy':
-                animationData = {};
+                animationData = affectionToSleepy;
                 break;
             case 'joy':
                 animationData = affectionToJoy;
+                break;
+            case 'sad':
+                animationData = affectionToSad;
                 break;
             default:
                 console.log("no new emotion to display");
@@ -135,19 +142,22 @@ switch (currentEmotion) {
                 animationData = curiousToNeutral;
                 break;
             case 'fear':
-                animationData = {};
+                animationData = curiousToFear;
                 break;
             case 'anger':
-                animationData = {};
+                animationData = curiousToAnger;
                 break;
             case 'affection':
-                animationData = {};
+                animationData = curiousToAffection;
                 break;
             case 'sleepy':
                 animationData = curiousToSleepy;
                 break;
             case 'joy':
                 animationData = curiousToJoy;
+                break;
+            case 'sad':
+                animationData = curiousToSad;
                 break;
             default:
                 console.log("no new emotion to display");
@@ -159,22 +169,25 @@ switch (currentEmotion) {
                 animationData = sleepyToAngry;
                 break;
             case 'neutral':
-                animationData = {};
+                animationData = sleepyToNeutral;
                 break;
             case 'fear':
-                animationData = {};
+                animationData = sleepyToFear;
                 break;
             case 'anger':
-                animationData = {};
+                animationData = sleepyToAnger;
                 break;
             case 'affection':
-                animationData = {};
+                animationData = sleepyToAffection;
                 break;
             case 'curious':
                 animationData = sleepyToCurious;
                 break;
             case 'joy':
                 animationData = sleepyToJoy;
+                break;
+            case 'sad':
+                animationData = sleepyToSad;
                 break;
             default:
                 console.log("no new emotion to display");
@@ -183,23 +196,25 @@ switch (currentEmotion) {
     case 'sad':
         switch (nextEmotion) {
             case 'angry':
-                animationData = {};
+                animationData = sadToAngry;
                 break;
             case 'neutral':
                 animationData = sadToNeutral;
                 break;
             case 'fear':
-                animationData = {};
+                animationData = sadToFear;
                 break;
             case 'affection':
-                animationData = {};
+                animationData = sadToAffection;
                 break;
             case 'curious':
-                animationData = {};
+                animationData = sadToCurious;
                 break;
             case 'joy':
                 animationData = sadToJoy;
                 break;
+            case 'sleepy':
+                animationData = sadToSleepy;
             default:
                 console.log("no new emotion to display");
         }
@@ -232,34 +247,34 @@ switch (currentEmotion) {
         }
         break;
 }
-var params = {
-    container: document.getElementById('bodymovin'),
-    renderer: 'svg',
-    loop: true,
-    autoplay: true,
-    animationData: animationData
-};
+    var params = {
+        container: document.getElementById('bodymovin'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        animationData: animationData
+    };
 
-currentEmotion = nextEmotion;
-var params = {
-    container: document.getElementById('bodymovin'),
-    renderer: 'svg',
-    loop: false,
-    autoplay: true,
-    animationData: animationData
-};
-bodymovin.destroy();
-var anim;
-anim = bodymovin.loadAnimation(params);
+    currentEmotion = nextEmotion;
+    var params = {
+        container: document.getElementById('bodymovin'),
+        renderer: 'svg',
+        loop: false,
+        autoplay: true,
+        animationData: animationData
+    };
+    bodymovin.destroy();
+    var anim;
+    anim = bodymovin.loadAnimation(params);
 
 
-let url = 'audio/' + currentEmotion + '_01.wav';
-sound = new Audio(url);
-let now = Date.now(),
-    end = now + 1000;
-while (now < end) { now = Date.now(); }
- sound.play();
- 
+    let url = 'audio/' + currentEmotion + '_01.wav';
+    sound = new Audio(url);
+    let now = Date.now(),
+        end = now + 2000;
+    while (now < end) { now = Date.now(); }
+    sound.play();
+
 /* display_source.onmessage = (msg) => {
      try {
 } catch (error) {
